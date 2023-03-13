@@ -4,7 +4,7 @@ function HomePage() {
     return (
       <>
         <Navbar />
-        <div>Banner</div>
+        <img style={{width: "100%", height: "620px"}} src="/img/banner-4.png" />
         <div>Filtro</div>
         <div>Coluna de produtos</div>
         <div>Coluna aside de Contatos</div>

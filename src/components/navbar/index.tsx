@@ -1,5 +1,6 @@
 import { useState } from "react";
-import styles from "./navbar.module.css"
+import styles from "./navbar.module.css";
+import MenuIcon from '@mui/icons-material/Menu';
 
 function Navbar() {
   const [abrirMenuMobile, setAbrirMenuMobile] = useState(false);
@@ -7,8 +8,12 @@ function Navbar() {
     return (
         <header className={styles.cabecalho}>
           
-          <input type="checkbox" className={styles.hamburger} onClick={() => {setAbrirMenuMobile(!abrirMenuMobile)}} />
-
+          <div className={styles.hamburger}>
+            <label htmlFor="menu">
+              <MenuIcon className={styles.botaoMenu} />
+            </label>
+            <input id="menu" type="checkbox" style={{display: "none"}} onClick={() => {setAbrirMenuMobile(!abrirMenuMobile)}} />
+          </div>
           <div className={abrirMenuMobile ? `${styles.containerMenu} ${styles.abrirMenuMobile}` : `${styles.containerMenu} ${styles.fecharMenuMobile}`}>
             <ul className={styles.menu}>
               <li className={styles.menuItem}>
