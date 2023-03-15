@@ -1,0 +1,61 @@
+.produtos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 24px;
+    padding: 40px 0;
+}
+
+.produto {
+    text-align: center;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.imagem {
+    width: 136px;
+    height: 192px;
+}
+
+.titulo {
+    font-weight: normal;
+    padding: 8px 0;
+}
+
+.imagemEstrelas {
+    width: 100px;
+    height: 30px;
+}
+
+.info {
+    padding: 8px 0;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.precoAntigo {
+    color: var(--cor-cinza);
+}
+
+.preco {
+    font-weight: bold;
+    font-size: 20px;
+    color: var(--cor-escura);
+}
+
+.botao {
+    text-transform: none;
+    font-size: 16px;
+    padding: 4px 0;
+    line-height: normal;
+    border-radius: 5777px;
+    background-color: var(--cor-principal);
+    margin: 8px 0;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+    max-width: 140px;
+}

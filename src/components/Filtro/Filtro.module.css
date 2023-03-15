@@ -1,0 +1,23 @@
+.tags {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    padding: 48px 0;
+}
+
+.tag {
+    text-align: center;
+}
+
+.tag__texto {
+    padding: 8px 0;
+    font-size: 24px;
+    max-width: 140px;
+}
+
+.imagem {
+    height: 120px;
+    width: 120px;
+    border-radius: 100%;
+}

@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "label": "Produtos para Cabelo",
+        "imagem": "./img/shampoo.png"
+    }, 
+    {
+        "id": 2,
+        "label": "Skincare",
+        "imagem": "./img/skincare.png"
+    }, 
+    {
+        "id": 3,
+        "label": "Maquiagens",
+        "imagem": "./img/makeup.png"
+    }, 
+    {
+        "id": 4,
+        "label": "Esmaltes",
+        "imagem": "./img/esmalte.png"
+    }
+]

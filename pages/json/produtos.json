@@ -1,0 +1,48 @@
+[
+    {
+        "titulo": "Shampoo",
+        "precoAntigo": 120.00,
+        "preco": 100.00,
+        "categoria": {
+            "id": 1,
+            "label": "Produtos para Cabelo",
+            "maisPedidos": true, 
+            "lancamento": true, 
+            "promocao": false
+        }
+    }, 
+    {
+        "titulo": "Skincare",
+        "precoAntigo": 120.00,
+        "preco": 100.00,
+        "categoria": {
+            "id": 2,
+            "label": "Skincare",
+            "maisPedidos": false, 
+            "lancamento": true, 
+            "promocao": true
+        }
+    }, {
+        "titulo": "Maquiagens",
+        "precoAntigo": 120.00,
+        "preco": 100.00,
+        "categoria": {
+            "id": 3,
+            "label": "Maquiagens",
+            "maisPedidos": false, 
+            "lancamento": false, 
+            "promocao": true
+        }
+    }, {
+        "titulo": "Esmaltes",
+        "precoAntigo": 120.00,
+        "preco": 100.00,
+        "categoria": {
+            "id": 4,
+            "label": "Esmaltes",
+            "maisPedidos": true, 
+            "lancamento": true, 
+            "promocao": true
+        }
+    }
+]
