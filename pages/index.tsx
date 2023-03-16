@@ -2,19 +2,26 @@ import Banner from "../src/components/Banner"
 import Navbar from "../src/components/Navbar"
 import Filtro from "../src/components/Filtro"
 import Produtos from "../src/components/Produtos"
+import itens from "../src/json/produtos.json"
+import { useState } from "react"
+import { IProduto } from "../src/types/produto"
+
 
 function HomePage() {
 
-  {/* Chamar produtos */}
-  {/* filtrarProdutos() */}
-  {/* Lançamentos e Promoções */}
+  const [produtos, setProdutos] = useState<IProduto>(itens);
+
+  function filtrarProdutos(id: number) {
+    const produtosFiltrados = itens.filter(produto => produto.id === id)
+    setProdutos(produtosFiltrados);
+  }
 
     return (
       <>
         <Navbar />
         <Banner />
-        <Filtro />
-        <Produtos />
+        <Filtro filtrarProdutos={filtrarProdutos} setProdutos={setProdutos} />
+        <Produtos produtos={produtos} />
         <div>Coluna aside de Contatos</div>
         <div>Div informativa</div>
         <div>Footer</div>

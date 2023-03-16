@@ -50,6 +50,7 @@
 
 .botao {
     text-transform: none;
+    display: block;
     font-size: 16px;
     padding: 4px 0;
     line-height: normal;

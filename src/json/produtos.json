@@ -1,48 +1,48 @@
 [
     {
+        "id": 1,
         "titulo": "Shampoo",
-        "precoAntigo": 120.00,
-        "preco": 100.00,
+        "imagem": "./img/shampoo.png",
+        "precoAntigo": 70.00,
+        "preco": 49.90,
         "categoria": {
             "id": 1,
             "label": "Produtos para Cabelo",
-            "maisPedidos": true, 
-            "lancamento": true, 
-            "promocao": false
+            "maisPedidos": true
         }
     }, 
     {
+        "id": 2,
         "titulo": "Skincare",
+        "imagem": "./img/skincare.png",
         "precoAntigo": 120.00,
-        "preco": 100.00,
+        "preco": 99.00,
         "categoria": {
             "id": 2,
             "label": "Skincare",
-            "maisPedidos": false, 
-            "lancamento": true, 
-            "promocao": true
+            "maisPedidos": false
         }
     }, {
+        "id": 3,
         "titulo": "Maquiagens",
+        "imagem": "./img/makeup.png",
         "precoAntigo": 120.00,
         "preco": 100.00,
         "categoria": {
             "id": 3,
             "label": "Maquiagens",
-            "maisPedidos": false, 
-            "lancamento": false, 
-            "promocao": true
+            "maisPedidos": false
         }
     }, {
+        "id": 4,
         "titulo": "Esmaltes",
-        "precoAntigo": 120.00,
-        "preco": 100.00,
+        "imagem": "./img/esmalte.png",
+        "precoAntigo": 190.00,
+        "preco": 90.00,
         "categoria": {
             "id": 4,
             "label": "Esmaltes",
-            "maisPedidos": true, 
-            "lancamento": true, 
-            "promocao": true
+            "maisPedidos": true
         }
     }
 ]
