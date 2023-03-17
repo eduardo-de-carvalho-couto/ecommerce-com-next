@@ -20,7 +20,7 @@ export default function Filtro({ filtrarProdutos, setProdutos }: Props) {
           </li>
         ))}
         <li className={styles.tag} key={"todos"} onClick={() => setProdutos(produtos) }>
-            <img src="./img/todos-1.jpg" className={styles.imagem} alt="Todos os produtos"/>
+            <img src="./img/todos.jpg" className={styles.imagem} alt="Todos os produtos"/>
             <p className={styles.tag__texto}>Todos os Produtos</p>
           </li>
       </ul>

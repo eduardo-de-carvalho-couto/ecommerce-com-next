@@ -5,6 +5,7 @@ import Produtos from "../src/components/Produtos"
 import itens from "../src/json/produtos.json"
 import { useState } from "react"
 import { IProduto } from "../src/types/produto"
+import Contatos from "../src/components/Contatos"
 
 
 function HomePage() {
@@ -22,7 +23,7 @@ function HomePage() {
         <Banner />
         <Filtro filtrarProdutos={filtrarProdutos} setProdutos={setProdutos} />
         <Produtos produtos={produtos} />
-        <div>Coluna aside de Contatos</div>
+        <Contatos />
         <div>Div informativa</div>
         <div>Footer</div>
       </>
