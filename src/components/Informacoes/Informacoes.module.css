@@ -1,0 +1,18 @@
+.informacoes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.informacao {
+    padding: 16px;
+}
+
+.informacao__titulo {
+    padding: 16px 0;
+    text-transform: uppercase;
+}
+
+.informacao__itens li {
+    padding: 8px 0;
+}

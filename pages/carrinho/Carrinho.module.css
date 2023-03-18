@@ -1,0 +1,56 @@
+.cabecalho {
+    position: relative;
+    padding: 16px 0;
+    font-size: 24px;
+}
+
+.cabecalho__titulo {
+    text-align: center;
+    margin-bottom: 32px;    
+}
+
+.cabecalho__voltar {
+    position: absolute;
+    top: 0px;
+    margin: 16px;
+    font-size: 40px;
+    background-color: var(--cor-cinza-clara);
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.4);
+    border-radius: 50%;
+}
+
+.produtos {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.produtos li {
+    display: flex;
+    align-items: center;
+    margin: 0 16px;
+    border-radius: 8px;
+    font-size: 20px;
+    background-color: var(--cor-cinza-clara);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    padding: 8px 16px;
+}
+
+.total {
+    font-size: 24px;
+    text-align: center;
+    padding: 32px 0 16px 0;
+    font-weight: bold;
+}
+
+.centralizadorDoBotao {
+    text-align: center;
+}
+
+.comprar {
+    text-transform: none;
+    font-size: 16px;
+    padding: 4px 40px;
+    border-radius: 577777px;
+    background-color: var(--cor-principal);
+}
