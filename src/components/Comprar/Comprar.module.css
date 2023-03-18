@@ -1,0 +1,49 @@
+.comprar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 1;
+    background-color: var(--cor-cinza-clara);
+    padding-top: 24px;
+    font-size: 20px;
+}
+
+.close {
+    position: absolute;
+    right: 40px;
+    font-size: 32px;
+    top: -30px;
+    background-color: var(--cor-cinza-clara);
+    box-shadow: 0px -2px 2px 1px rgba(0, 0, 0, 0.1);
+}
+
+.comprar__finalizar {
+    background-color: var(--cor-principal);
+    padding: 8px 0;
+    color: var(--cor-branco);
+    font-weight: bold;
+    font-size: 20px;
+    position: relative;
+    margin-top: 8px;
+}
+
+.carrinho {
+    position: absolute;
+    top: 12px;
+    right: 20px;
+}
+
+.adicionar {
+    color: var(--cor-adicionar)
+}
+
+.remover {
+    color: var(--cor-remover);
+}
+
+.comprarItem__tituloEPreco {
+    font-weight: bold;
+    max-width: 64%;
+    margin: 0 auto;
+}

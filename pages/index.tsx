@@ -6,6 +6,9 @@ import itens from "../src/json/produtos.json"
 import { useState } from "react"
 import { IProduto } from "../src/types/produto"
 import Contatos from "../src/components/Contatos"
+import Informacoes from "../src/components/Informacoes"
+import Footer from "../src/components/Footer"
+import Comprar from "../src/components/Comprar"
 
 
 function HomePage() {
@@ -23,9 +26,10 @@ function HomePage() {
         <Banner />
         <Filtro filtrarProdutos={filtrarProdutos} setProdutos={setProdutos} />
         <Produtos produtos={produtos} />
+        <Comprar />
         <Contatos />
-        <div>Div informativa</div>
-        <div>Footer</div>
+        <Informacoes />
+        <Footer />
       </>
     );
   }

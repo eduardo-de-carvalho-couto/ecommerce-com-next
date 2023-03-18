@@ -22,12 +22,15 @@ a {
     --cor-medio: #DE3CD3;
     --cor-principal: #C936C0;
     --cor-cinza: #8c8c8c;
+    --cor-cinza-escura: #333333;
     --cor-cinza-clara: #f2f2f2;
     --cor-branco: #ffffff;
     --cor-whatsapp: #3CC14E;
     --cor-whatsapp-escura: #2a8937;
     --cor-telegram: #30A4DE;
     --cor-telegram-escura:  #1d7eaf;
+    --cor-adicionar: #1875E8;
+    --cor-remover: #ff6666;
     --fonte-principal: 'Raleway', sans-serif;
     --fonte-secundaria: 'Playfair Display', sans-serif;
    

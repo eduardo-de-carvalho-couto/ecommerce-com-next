@@ -24,7 +24,7 @@ export default function Contatos() {
         <input type="text" className={styles.cadastroDeEmail__input} placeholder="Nome" />
         <input type="text" className={styles.cadastroDeEmail__input} placeholder="E-mail" />
         <Button variant="contained" className={styles.cadastroDeEmail__botao}>
-          Cadastrar
+          Receber
         </Button>
         
       </div>
