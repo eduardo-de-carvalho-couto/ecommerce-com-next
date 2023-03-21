@@ -3,15 +3,18 @@ import styles from './Comprar.module.css';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Badge } from '@mui/material';
 import { ComprarItem } from './ComprarItem';
+import { IProduto } from '../../types/produto';
 
+interface Props {
+  produto: IProduto
+}
 
-export default function Comprar() {
+export default function Comprar({ produto }: Props) {
   return (
     <div className={styles.comprar}>
 
-        <ComprarItem />
+        <ComprarItem produto={produto} />
 
-        <p>Há 2 itens no carrinho</p>
 
         <div className={styles.comprar__finalizar}>
             <p>Finalizar compra</p>

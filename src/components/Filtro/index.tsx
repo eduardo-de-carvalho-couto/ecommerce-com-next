@@ -1,12 +1,12 @@
 import React from 'react';
-import { IProduto } from '../../types/produto';
+import { IProdutos } from '../../types/produto';
 import styles from './Filtro.module.css';
 import filtros from './filtros.json';
 import produtos from '../../json/produtos.json';
 
 interface Props {
   filtrarProdutos: (id: number) => void,
-  setProdutos: React.Dispatch<React.SetStateAction<IProduto>>
+  setProdutos: React.Dispatch<React.SetStateAction<IProdutos>>
 }
 
 export default function Filtro({ filtrarProdutos, setProdutos }: Props) {
