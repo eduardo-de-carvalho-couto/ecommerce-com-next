@@ -1,9 +1,13 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { IProdutoNoCarrinho } from "../../types/produto";
 
 interface IProps {
-    carrinho: IProdutoNoCarrinho[],
-    setCarrinho: React.Dispatch<React.SetStateAction<IProdutoNoCarrinho[]>>
+    carrinho: IProdutoNoCarrinho[], 
+    setCarrinho: React.Dispatch<React.SetStateAction<IProdutoNoCarrinho[]>>, 
+    quantidadeCarrinho: number, 
+    setQuantidadeCarrinho: React.Dispatch<React.SetStateAction<number>>, 
+    valorTotal: number, 
+    setValorTotal: React.Dispatch<React.SetStateAction<number>>
 }
 
 export const CarrinhoContext = createContext<IProps>({} as IProps);
@@ -11,11 +15,17 @@ CarrinhoContext.displayName = "Carrinho";
 
 export const CarrinhoProvider = ({ children }) => {
     const [carrinho, setCarrinho] = useState<IProdutoNoCarrinho[]>([]);
+    const [quantidadeCarrinho, setQuantidadeCarrinho] = useState<number>(0);
+    const [valorTotal, setValorTotal] = useState<number>(0);
 
     return (
         <CarrinhoContext.Provider value={{
             carrinho, 
-            setCarrinho
+            setCarrinho, 
+            quantidadeCarrinho, 
+            setQuantidadeCarrinho, 
+            valorTotal, 
+            setValorTotal
         }}>
             {children}
         </CarrinhoContext.Provider>
@@ -23,7 +33,14 @@ export const CarrinhoProvider = ({ children }) => {
 }
 
 export const useCarrinhoContext = () => {
-    const { carrinho, setCarrinho } = useContext(CarrinhoContext);
+    const {
+        carrinho, 
+        setCarrinho, 
+        quantidadeCarrinho, 
+        setQuantidadeCarrinho, 
+        valorTotal, 
+        setValorTotal
+    } = useContext(CarrinhoContext);
 
     const mudarQuantidade = (id: number, adicionarOuRemover: number) => carrinho.map(item => {
         if(item.id === id) item.quantidade += adicionarOuRemover;
@@ -53,9 +70,20 @@ export const useCarrinhoContext = () => {
         return setCarrinho(novoCarrinho);
     }
 
+    useEffect(() => {
+        let {novaQuantidade, novoValor}: {novaQuantidade: number, novoValor: number} = carrinho.reduce((acumulador, produtoAtual) => ({
+            novaQuantidade: acumulador.novaQuantidade + produtoAtual.quantidade, 
+            novoValor: acumulador.novoValor + (produtoAtual.preco * produtoAtual.quantidade)
+        }), {novaQuantidade: 0, novoValor: 0});
+        setQuantidadeCarrinho(novaQuantidade);
+        setValorTotal(novoValor);
+    }, [carrinho]);
+
     return {
         carrinho, 
         adicionarCarrinho, 
-        removerCarrinho
+        removerCarrinho, 
+        quantidadeCarrinho, 
+        valorTotal
     }
 }

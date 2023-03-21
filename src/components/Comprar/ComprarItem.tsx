@@ -13,7 +13,7 @@ interface Props {
 
 export const ComprarItem = ({ produto }: Props) => {
 
-  const { carrinho, adicionarCarrinho, removerCarrinho } = useCarrinhoContext();
+  const { carrinho, adicionarCarrinho, removerCarrinho, quantidadeCarrinho } = useCarrinhoContext();
   const produtoNoCarrinho: boolean = carrinho.some(item => item.id === produto.id);
 
   return (
@@ -26,7 +26,7 @@ export const ComprarItem = ({ produto }: Props) => {
             <AddIcon />
         </IconButton>
 
-        0
+        {quantidadeCarrinho}
 
         <IconButton className={styles.remover} disabled={!produtoNoCarrinho} onClick={() => removerCarrinho(produto.id)}>
             <RemoveIcon />

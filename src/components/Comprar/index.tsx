@@ -17,7 +17,7 @@ export default function Comprar({ produto }: Props) {
 
 
         <div className={styles.comprar__finalizar}>
-            <p>Finalizar compra</p>
+            <p>Ver carrinho</p>
             
             <Badge badgeContent="2" className={styles.carrinho} color="primary">
                 <ShoppingCartIcon />
