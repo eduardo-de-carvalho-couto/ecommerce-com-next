@@ -1,13 +1,14 @@
 import React from 'react';
 import Button from '@mui/material/Button';
 import styles from './Produtos.module.css';
-import { IProduto } from '../../types/produto';
+import { IProduto, IProdutos } from '../../types/produto';
 
 interface Props {
-    produtos: IProduto
+    produtos: IProdutos, 
+    selecionarProduto: React.Dispatch<React.SetStateAction<IProduto>>
 }
 
-export default function Produtos({ produtos }: Props ) {
+export default function Produtos({ produtos, selecionarProduto }: Props ) {
 
     return (
         <section>
@@ -23,8 +24,8 @@ export default function Produtos({ produtos }: Props ) {
                             <img className={styles.imagemEstrelas} src="./img/stars.png" />
                         </div>
 
-                        <Button variant="contained" className={styles.botao}>
-                            Adicionar ao Carrinho
+                        <Button variant="contained" className={styles.botao} onClick={() => selecionarProduto(produto)}>
+                            Comprar
                         </Button>
                     </li>
                 ))}
