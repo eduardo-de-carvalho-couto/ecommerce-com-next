@@ -11,7 +11,7 @@ interface Props {
 export default function Produtos({ produtos, selecionarProduto }: Props ) {
 
     return (
-        <section>
+        <div>
             <ul className={styles.produtos}>
                 {produtos.map(produto => (
                     <li className={styles.produto} key={produto.id}>
@@ -30,6 +30,6 @@ export default function Produtos({ produtos, selecionarProduto }: Props ) {
                     </li>
                 ))}
             </ul>
-        </section>
+        </div>
     )
 }

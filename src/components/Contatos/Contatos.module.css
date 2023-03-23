@@ -1,5 +1,7 @@
 .contatos {
     padding: 16px;
+    max-width: 360px;
+    margin: 0 auto;
 }
 
 .whatsapp {
@@ -19,6 +21,10 @@
     font-weight: bold;
 }
 
+.whatsapp__botao:hover {
+    background-color: var(--cor-whatsapp-mais-escura);
+}
+
 .telegram__botao {
     background-color: var(--cor-telegram-escura);
     border-radius: 5777px;
@@ -26,6 +32,10 @@
     font-size: 16px;
     font-weight: bold;
     width: 104px;
+}
+
+.telegram__botao:hover {
+    background-color: var(--cor-telegram-mais-escura);
 }
 
 .appMensagem {
@@ -74,4 +84,10 @@
     margin: 4px 0;
     text-transform: none;
     font-size: 16px;
+}
+
+@media screen and (min-width: 1024px) {
+    .contatos {
+        margin: initial;
+    }
 }
