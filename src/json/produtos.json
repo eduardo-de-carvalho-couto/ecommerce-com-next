@@ -44,5 +44,51 @@
             "id": 4,
             "label": "Esmaltes"
         }
+    }, 
+    {
+        "id": 11,
+        "titulo": "Shampoo",
+        "imagem": "./img/shampoo.png",
+        "precoAntigo": 70.00,
+        "preco": 49.90,
+        "maisPedidos": true,
+        "categoria": {
+            "id": 11,
+            "label": "Produtos para Cabelo"
+        }
+    }, 
+    {
+        "id": 12,
+        "titulo": "Skincare",
+        "imagem": "./img/skincare.png",
+        "precoAntigo": 120.00,
+        "preco": 99.00,
+        "maisPedidos": false,
+        "categoria": {
+            "id": 12,
+            "label": "Skincare"
+        }
+    }, {
+        "id": 13,
+        "titulo": "Maquiagens",
+        "imagem": "./img/makeup.png",
+        "precoAntigo": 120.00,
+        "preco": 100.00,
+        "maisPedidos": false,
+        "categoria": {
+            "id": 13,
+            "label": "Maquiagens"
+        }
+    }, {
+        "id": 14,
+        "titulo": "Esmaltes",
+        "imagem": "./img/esmalte.png",
+        "precoAntigo": 190.00,
+        "preco": 90.00,
+        "maisPedidos": true,
+        "categoria": {
+            "id": 14,
+            "label": "Esmaltes"
+        }
     }
 ]

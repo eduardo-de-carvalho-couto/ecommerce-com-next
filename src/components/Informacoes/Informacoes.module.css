@@ -16,3 +16,12 @@
 .informacao__itens li {
     padding: 8px 0;
 }
+
+@media screen and (min-width: 1024px) {
+    .informacoes {
+        display: flex;
+        justify-content: space-between;
+        max-width: 720px;
+        margin: 0 auto;
+    }
+}

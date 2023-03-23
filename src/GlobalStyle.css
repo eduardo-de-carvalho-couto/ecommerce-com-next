@@ -27,12 +27,24 @@ a {
     --cor-branco: #ffffff;
     --cor-whatsapp: #3CC14E;
     --cor-whatsapp-escura: #2a8937;
+    --cor-whatsapp-mais-escura: #1e6227;
     --cor-telegram: #30A4DE;
     --cor-telegram-escura:  #1d7eaf;
+    --cor-telegram-mais-escura: #155f84;
     --cor-adicionar: #1875E8;
     --cor-remover: #ff6666;
     --fonte-principal: 'Raleway', sans-serif;
     --fonte-secundaria: 'Playfair Display', sans-serif;
    
     font-family: var(--fonte-principal);
-  }
+}
+
+
+
+@media screen and (min-width: 1024px) {
+    .container__desktop {
+        display: flex;
+        justify-content: center;
+        gap: 24px;
+    }
+}

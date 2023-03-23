@@ -27,12 +27,14 @@ function HomePage() {
 
         <Banner />
         <Filtro filtrarProdutos={filtrarProdutos} setProdutos={setProdutos} />
-        <Produtos produtos={produtos} selecionarProduto={setProdutoSelecionado} />
-        <Contatos />
+        <div className="container__desktop">
+          <Produtos produtos={produtos} selecionarProduto={setProdutoSelecionado} />
+          <Contatos />
+        </div>
         <Informacoes />
         <Footer />
 
-        {produtoSelecionado ? <Comprar produto={produtoSelecionado} setProduto={setProdutoSelecionado} /> : ''};
+        {produtoSelecionado ? <Comprar produto={produtoSelecionado} setProduto={setProdutoSelecionado} /> : ''}
       </>
     );
   }

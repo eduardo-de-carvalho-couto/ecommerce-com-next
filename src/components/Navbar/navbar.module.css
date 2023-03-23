@@ -65,3 +65,10 @@
     padding: 16px 32px;
     font-size: 24px;
 }
+
+@media screen and (min-width: 1024px) {
+    .botaoMenu:hover{
+        cursor: pointer;
+        background-color: var(--cor-escura);
+    }
+}
