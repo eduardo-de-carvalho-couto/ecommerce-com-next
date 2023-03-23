@@ -20,16 +20,13 @@ function Navbar() {
                 Home
               </li>
               <li className={styles.menuItem}>
+                Carrinho
+              </li>
+              <li className={styles.menuItem}>
                 Categorias
               </li>
               <li className={styles.menuItem}>
-                Todos os Produtos
-              </li>
-              <li className={styles.menuItem}>
-                Lançamentos
-              </li>
-              <li className={styles.menuItem}>
-                Cupons
+                Produtos
               </li>
               <li className={styles.menuItem}>
                 Contato

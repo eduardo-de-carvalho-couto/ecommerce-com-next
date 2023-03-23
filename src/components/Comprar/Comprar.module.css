@@ -21,17 +21,17 @@
 
 .comprar__finalizar {
     background-color: var(--cor-principal);
-    padding: 8px 0;
+    padding: 14px 8px;
     color: var(--cor-branco);
     font-weight: bold;
     font-size: 20px;
     position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .carrinho {
-    position: absolute;
-    top: 12px;
-    right: 20px;
 }
 
 .adicionar {

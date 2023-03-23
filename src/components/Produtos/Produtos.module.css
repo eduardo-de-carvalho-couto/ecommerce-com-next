@@ -3,7 +3,7 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: 24px;
-    padding: 40px 0;
+    padding: 40px 0 16px 0;
 }
 
 .produto {
@@ -58,4 +58,8 @@
     margin: 8px 0;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
     max-width: 140px;
+}
+
+.botao:hover {
+    background-color: var(--cor-escura);
 }

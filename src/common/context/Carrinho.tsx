@@ -77,7 +77,7 @@ export const useCarrinhoContext = () => {
         }), {novaQuantidade: 0, novoValor: 0});
         setQuantidadeCarrinho(novaQuantidade);
         setValorTotal(novoValor);
-    }, [carrinho]);
+    }, [carrinho, setQuantidadeCarrinho, setValorTotal]);
 
     return {
         carrinho, 

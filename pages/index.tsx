@@ -14,7 +14,7 @@ import Comprar from "../src/components/Comprar"
 function HomePage() {
 
   const [produtos, setProdutos] = useState<IProdutos>(itens);
-  const [produtoSelecionado, setProdutoSelecionado] = useState<IProduto>();
+  const [produtoSelecionado, setProdutoSelecionado] = useState<IProduto | null>();
 
   function filtrarProdutos(id: number) {
     const produtosFiltrados = itens.filter(produto => produto.id === id)
@@ -32,7 +32,7 @@ function HomePage() {
         <Informacoes />
         <Footer />
 
-        <Comprar produto={produtoSelecionado} />
+        {produtoSelecionado ? <Comprar produto={produtoSelecionado} setProduto={setProdutoSelecionado} /> : ''};
       </>
     );
   }

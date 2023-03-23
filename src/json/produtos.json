@@ -5,10 +5,10 @@
         "imagem": "./img/shampoo.png",
         "precoAntigo": 70.00,
         "preco": 49.90,
+        "maisPedidos": true,
         "categoria": {
             "id": 1,
-            "label": "Produtos para Cabelo",
-            "maisPedidos": true
+            "label": "Produtos para Cabelo"
         }
     }, 
     {
@@ -17,10 +17,10 @@
         "imagem": "./img/skincare.png",
         "precoAntigo": 120.00,
         "preco": 99.00,
+        "maisPedidos": false,
         "categoria": {
             "id": 2,
-            "label": "Skincare",
-            "maisPedidos": false
+            "label": "Skincare"
         }
     }, {
         "id": 3,
@@ -28,10 +28,10 @@
         "imagem": "./img/makeup.png",
         "precoAntigo": 120.00,
         "preco": 100.00,
+        "maisPedidos": false,
         "categoria": {
             "id": 3,
-            "label": "Maquiagens",
-            "maisPedidos": false
+            "label": "Maquiagens"
         }
     }, {
         "id": 4,
@@ -39,10 +39,10 @@
         "imagem": "./img/esmalte.png",
         "precoAntigo": 190.00,
         "preco": 90.00,
+        "maisPedidos": true,
         "categoria": {
             "id": 4,
-            "label": "Esmaltes",
-            "maisPedidos": true
+            "label": "Esmaltes"
         }
     }
 ]
