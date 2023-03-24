@@ -5,7 +5,7 @@
     text-align: center;
     z-index: 1;
     background-color: var(--cor-cinza-clara);
-    padding-top: 16px;
+    padding-top: 0 16px;
     font-size: 20px;
     box-shadow: 2px -2px 5px rgba(0, 0, 0, 0.4);
 }
@@ -31,7 +31,13 @@
     align-items: center;
 }
 
-.carrinho {
+
+.verCarrinho {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--cor-branco);
 }
 
 .adicionar {
@@ -42,8 +48,16 @@
     color: var(--cor-remover);
 }
 
+
 .comprarItem__tituloEPreco {
     font-weight: bold;
     max-width: 64%;
     margin: 0 auto;
+    padding: 8px 0;
+}
+
+@media screen and (min-width: 1024px) {
+    .close:hover {
+        cursor: pointer;
+    }
 }

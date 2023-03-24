@@ -5,6 +5,8 @@ import { Badge } from '@mui/material';
 import { ComprarItem } from './ComprarItem';
 import { IProduto } from '../../types/produto';
 import { useCarrinhoContext } from '../../common/context/Carrinho';
+import CloseIcon from '@mui/icons-material/Close';
+import Link from 'next/link';
 
 interface Props {
   produto: IProduto, 
@@ -16,19 +18,22 @@ export default function Comprar({ produto, setProduto }: Props) {
 
   return (
     <div className={styles.comprar}>
+        {produto ? <CloseIcon className={styles.close} onClick={() => setProduto(null)} /> : ''}
+        {produto ? <ComprarItem produto={produto} /> : ''}
 
-        <ComprarItem produto={produto} setProduto={setProduto} />
 
+        {quantidadeCarrinho > 0 || produto ? 
+          <div className={styles.comprar__finalizar}>
+              <Badge badgeContent={quantidadeCarrinho} color="primary">
+                  <ShoppingCartIcon />
+              </Badge>
+              
+              <Link href="/carrinho" className={styles.verCarrinho}>Ver carrinho</Link>
 
-        <div className={styles.comprar__finalizar}>
-            <Badge badgeContent={quantidadeCarrinho} className={styles.carrinho} color="primary">
-                <ShoppingCartIcon />
-            </Badge>
-            
-            <p>Ver carrinho</p>
-
-            {valorTotal.toFixed(2)}
-        </div>
+              <p>R$ {valorTotal.toFixed(2)}</p>
+          </div> 
+          : ''
+        }
     </div>
   )
 }

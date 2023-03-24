@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styles from "./navbar.module.css";
 import MenuIcon from '@mui/icons-material/Menu';
+import Link from "next/link";
 
 function Navbar() {
   const [abrirMenuMobile, setAbrirMenuMobile] = useState(false);
@@ -17,19 +18,16 @@ function Navbar() {
           <div className={abrirMenuMobile ? `${styles.containerMenu} ${styles.abrirMenuMobile}` : `${styles.containerMenu} ${styles.fecharMenuMobile}`}>
             <ul className={styles.menu}>
               <li className={styles.menuItem}>
-                Home
+                <Link className={styles.link} href="#home" onClick={() => {setAbrirMenuMobile(!abrirMenuMobile)}}>Home</Link>
               </li>
               <li className={styles.menuItem}>
-                Carrinho
+                <Link className={styles.link} href="/carrinho" onClick={() => {setAbrirMenuMobile(!abrirMenuMobile)}}>Carrinho</Link>
               </li>
               <li className={styles.menuItem}>
-                Categorias
+                <Link className={styles.link} href="#categorias" onClick={() => {setAbrirMenuMobile(!abrirMenuMobile)}}>Categorias</Link>
               </li>
               <li className={styles.menuItem}>
-                Produtos
-              </li>
-              <li className={styles.menuItem}>
-                Contato
+                <Link className={styles.link} href="#produtos" onClick={() => {setAbrirMenuMobile(!abrirMenuMobile)}}>Produtos</Link>
               </li>
             </ul>
           </div>

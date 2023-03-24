@@ -11,7 +11,7 @@ interface Props {
 
 export default function Filtro({ filtrarProdutos, setProdutos }: Props) {
   return (
-    <section>
+    <section id="categorias">
       <ul className={styles.tags}>
         {filtros.map(opcao => (
           <li className={styles.tag} key={opcao.id} onClick={() => filtrarProdutos(opcao.id)}>
