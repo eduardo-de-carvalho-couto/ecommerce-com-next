@@ -9,22 +9,24 @@ import 'swiper/css/autoplay';
 export default function Banner() {
   return (
     
-    <Swiper
+    <section id="home">
+      <Swiper
       slidesPerView={1}
       autoplay={{ delay: 5000 }}
       speed={ 750 }
       modules={[Pagination, Autoplay]}
       pagination={{ clickable: true }}
-    >
-        <SwiperSlide>
-            <img className={`${styles.slide} ${styles.banner__mobile}`} src="/img/banner-4.png" />
-            <img className={`${styles.slide} ${styles.banner__desktop}`} src="/img/banner-1.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-            <img className={`${styles.slide} ${styles.banner__mobile}`} src="/img/banner-5.png" />
-            <img className={`${styles.slide} ${styles.banner__desktop}`} src="/img/banner-2.jpg" />
-        </SwiperSlide>
-    </Swiper>
+      >
+          <SwiperSlide>
+              <img className={`${styles.slide} ${styles.banner__mobile}`} src="/img/banner-4.png" />
+              <img className={`${styles.slide} ${styles.banner__desktop}`} src="/img/banner-1.jpg" />
+          </SwiperSlide>
+          <SwiperSlide>
+              <img className={`${styles.slide} ${styles.banner__mobile}`} src="/img/banner-5.png" />
+              <img className={`${styles.slide} ${styles.banner__desktop}`} src="/img/banner-2.jpg" />
+          </SwiperSlide>
+      </Swiper>
+    </section>
 
   )
 }

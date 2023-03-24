@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth !important;
+}
+
 ol, ul {
 	list-style: none;
 }
@@ -38,8 +42,6 @@ a {
    
     font-family: var(--fonte-principal);
 }
-
-
 
 @media screen and (min-width: 1024px) {
     .container__desktop {

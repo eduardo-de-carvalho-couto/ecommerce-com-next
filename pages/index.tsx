@@ -17,7 +17,7 @@ function HomePage() {
   const [produtoSelecionado, setProdutoSelecionado] = useState<IProduto | null>();
 
   function filtrarProdutos(id: number) {
-    const produtosFiltrados = itens.filter(produto => produto.id === id)
+    const produtosFiltrados = itens.filter(produto => produto.categoria.id === id)
     setProdutos(produtosFiltrados);
   }
 
@@ -34,7 +34,7 @@ function HomePage() {
         <Informacoes />
         <Footer />
 
-        {produtoSelecionado ? <Comprar produto={produtoSelecionado} setProduto={setProdutoSelecionado} /> : ''}
+        <Comprar produto={produtoSelecionado} setProduto={setProdutoSelecionado} />
       </>
     );
   }

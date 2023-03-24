@@ -53,7 +53,7 @@
         "preco": 49.90,
         "maisPedidos": true,
         "categoria": {
-            "id": 11,
+            "id": 1,
             "label": "Produtos para Cabelo"
         }
     }, 
@@ -65,7 +65,7 @@
         "preco": 99.00,
         "maisPedidos": false,
         "categoria": {
-            "id": 12,
+            "id": 2,
             "label": "Skincare"
         }
     }, {
@@ -76,18 +76,18 @@
         "preco": 100.00,
         "maisPedidos": false,
         "categoria": {
-            "id": 13,
+            "id": 3,
             "label": "Maquiagens"
         }
     }, {
         "id": 14,
-        "titulo": "Esmaltes",
+        "titulo": "Esmaltes novo",
         "imagem": "./img/esmalte.png",
         "precoAntigo": 190.00,
         "preco": 90.00,
         "maisPedidos": true,
         "categoria": {
-            "id": 14,
+            "id": 4,
             "label": "Esmaltes"
         }
     }

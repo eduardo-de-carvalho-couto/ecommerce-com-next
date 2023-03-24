@@ -17,6 +17,7 @@
     background-color: var(--cor-cinza-clara);
     box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.4);
     border-radius: 50%;
+    color: #000000;
 }
 
 .produtos {
@@ -24,11 +25,14 @@
     flex-direction: column;
     gap: 16px;
     margin-bottom: 24px;
+    max-width: 360px;
+    margin: 0px auto 16px auto;
 }
 
 .produtos li {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     margin: 0 16px;
     border-radius: 8px;
     font-size: 20px;
@@ -54,4 +58,8 @@
     padding: 4px 40px;
     border-radius: 577777px;
     background-color: var(--cor-principal);
+}
+
+.comprar:hover {
+    background-color: var(--cor-escura);
 }

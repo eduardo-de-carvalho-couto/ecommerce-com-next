@@ -21,3 +21,9 @@
     width: 120px;
     border-radius: 100%;
 }
+
+@media screen and (min-width: 1024px) {
+    .tag {
+        cursor: pointer;
+    }
+}

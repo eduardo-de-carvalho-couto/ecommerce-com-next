@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 import styles from './Informacoes.module.css';
 
@@ -8,45 +9,22 @@ export default function Informacoes() {
             <h3 className={styles.informacao__titulo}>Informações</h3>
             <ul className={styles.informacao__itens}>
                 <li>
-                    Foo
+                    <Link className={styles.link} href="/">Foo</Link>
                 </li>
                 <li>
-                    Bar
+                    <Link className={styles.link} href="/">Bar</Link>
                 </li>
                 <li>
-                    Foo
+                    <Link className={styles.link} href="/">Foo</Link>
                 </li>
                 <li>
-                    Bar
+                    <Link className={styles.link} href="/">Bar</Link>
                 </li>
                 <li>
-                    Foo
+                    <Link className={styles.link} href="/">Foo</Link>
                 </li>
                 <li>
-                    Bar
-                </li>
-            </ul>
-        </div>
-        <div className={styles.informacao}>
-            <h3 className={styles.informacao__titulo}>Informações</h3>
-            <ul className={styles.informacao__itens}>
-                <li>
-                    Foo
-                </li>
-                <li>
-                    Bar
-                </li>
-                <li>
-                    Foo
-                </li>
-                <li>
-                    Bar
-                </li>
-                <li>
-                    Foo
-                </li>
-                <li>
-                    Bar
+                    <Link className={styles.link} href="/">Bar</Link>
                 </li>
             </ul>
         </div>
@@ -54,22 +32,45 @@ export default function Informacoes() {
             <h3 className={styles.informacao__titulo}>Informações</h3>
             <ul className={styles.informacao__itens}>
                 <li>
-                    Foo
+                    <Link className={styles.link} href="/">Foo</Link>
                 </li>
                 <li>
-                    Bar
+                    <Link className={styles.link} href="/">Bar</Link>
                 </li>
                 <li>
-                    Foo
+                    <Link className={styles.link} href="/">Foo</Link>
                 </li>
                 <li>
-                    Bar
+                    <Link className={styles.link} href="/">Bar</Link>
                 </li>
                 <li>
-                    Foo
+                    <Link className={styles.link} href="/">Foo</Link>
                 </li>
                 <li>
-                    Bar
+                    <Link className={styles.link} href="/">Bar</Link>
+                </li>
+            </ul>
+        </div>
+        <div className={styles.informacao}>
+            <h3 className={styles.informacao__titulo}>Informações</h3>
+            <ul className={styles.informacao__itens}>
+                <li>
+                    <Link className={styles.link} href="/">Foo</Link>
+                </li>
+                <li>
+                    <Link className={styles.link} href="/">Bar</Link>
+                </li>
+                <li>
+                    <Link className={styles.link} href="/">Foo</Link>
+                </li>
+                <li>
+                    <Link className={styles.link} href="/">Bar</Link>
+                </li>
+                <li>
+                    <Link className={styles.link} href="/">Foo</Link>
+                </li>
+                <li>
+                    <Link className={styles.link} href="/">Bar</Link>
                 </li>
             </ul>
         </div>
