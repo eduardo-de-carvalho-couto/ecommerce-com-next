@@ -2,22 +2,56 @@ import Banner from "../src/components/Banner"
 import Navbar from "../src/components/Navbar"
 import Filtro from "../src/components/Filtro"
 import Produtos from "../src/components/Produtos"
-import itens from "../src/json/produtos.json"
 import { useState } from "react"
-import { IProduto, IProdutos } from "../src/types/produto"
+import { IProduto } from "../src/types/produto"
 import Contatos from "../src/components/Contatos"
 import Informacoes from "../src/components/Informacoes"
 import Footer from "../src/components/Footer"
 import Comprar from "../src/components/Comprar"
+import { InferGetStaticPropsType, GetStaticProps } from 'next'
+import { cmsService } from "../src/infra/cms/cmsService"
 
+export const getStaticProps: GetStaticProps = async () => {
+  
+  const contentQuery = `
+  query {
+    allProdutos {
+      id, 
+      imagem, 
+      precoAntigo, 
+      preco, 
+      maisPedidos,
+      titulo, 
+      categoria {
+        id, 
+        label
+      }
+    }, 
+    allProductCategories {
+      id, 
+      label, 
+      imagem
+    }
+  }
+  `;
+  const { data } = await cmsService({
+    query: contentQuery
+  });
 
-function HomePage() {
+  return {
+    props: {
+      todosOsProdutos: data
+    }
+  }
+}
 
-  const [produtos, setProdutos] = useState<IProdutos>(itens);
+function HomePage({ todosOsProdutos }: InferGetStaticPropsType<typeof getStaticProps>) {
+
+  const [produtos, setProdutos] = useState<IProduto[]>(todosOsProdutos.allProdutos);
   const [produtoSelecionado, setProdutoSelecionado] = useState<IProduto | null>();
 
-  function filtrarProdutos(id: number) {
-    const produtosFiltrados = itens.filter(produto => produto.categoria.id === id)
+  function filtrarProdutos(id: string) {
+    const produtosFiltrados = todosOsProdutos.allProdutos.filter(produto => produto.categoria.id === id)
     setProdutos(produtosFiltrados);
   }
 
@@ -26,7 +60,7 @@ function HomePage() {
         <Navbar />
 
         <Banner />
-        <Filtro filtrarProdutos={filtrarProdutos} setProdutos={setProdutos} />
+        <Filtro todosOsProdutos={todosOsProdutos.allProdutos} filtros={todosOsProdutos.allProductCategories} filtrarProdutos={filtrarProdutos} setProdutos={setProdutos} />
         <div className="container__desktop">
           <Produtos produtos={produtos} selecionarProduto={setProdutoSelecionado} />
           <Contatos />

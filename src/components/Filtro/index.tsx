@@ -1,15 +1,16 @@
 import React from 'react';
-import { IProdutos } from '../../types/produto';
+import { IProduto } from '../../types/produto';
 import styles from './Filtro.module.css';
-import filtros from './filtros.json';
-import produtos from '../../json/produtos.json';
 
 interface Props {
-  filtrarProdutos: (id: number) => void,
-  setProdutos: React.Dispatch<React.SetStateAction<IProdutos>>
+  todosOsProdutos: IProduto[],
+  filtros: {id: string, label: string, imagem: string}[],
+  filtrarProdutos: (id: string) => void,
+  setProdutos: React.Dispatch<React.SetStateAction<IProduto[]>>
 }
 
-export default function Filtro({ filtrarProdutos, setProdutos }: Props) {
+export default function Filtro({ todosOsProdutos, filtros, filtrarProdutos, setProdutos }: Props) {
+  console.log(filtros)
   return (
     <section id="categorias">
       <ul className={styles.tags}>
@@ -19,7 +20,7 @@ export default function Filtro({ filtrarProdutos, setProdutos }: Props) {
             <p className={styles.tag__texto}>{opcao.label}</p>
           </li>
         ))}
-        <li className={styles.tag} key={"todos"} onClick={() => setProdutos(produtos) }>
+        <li className={styles.tag} key={"todos"} onClick={() => setProdutos(todosOsProdutos) }>
             <img src="./img/todos.jpg" className={styles.imagem} alt="Todos os produtos"/>
             <p className={styles.tag__texto}>Todos os Produtos</p>
           </li>

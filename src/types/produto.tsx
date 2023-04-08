@@ -1,10 +1,18 @@
-import produtos from '../json/produtos.json';
-
-export type IProdutos = typeof produtos;
-
-export type IProduto = typeof produtos[0];
+export interface IProduto {
+    id: string, 
+    titulo: string, 
+    imagem: string, 
+    precoAntigo: number, 
+    preco: number, 
+    maisPedidos: boolean, 
+    categoria: {
+        id: string, 
+        label: string
+    }
+}
 
 export interface IProdutoNoCarrinho extends IProduto {
     quantidade?: number
 }
+
 

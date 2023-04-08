@@ -1,10 +1,10 @@
 import React from 'react';
 import Button from '@mui/material/Button';
 import styles from './Produtos.module.css';
-import { IProduto, IProdutos } from '../../types/produto';
+import { IProduto } from '../../types/produto';
 
 interface Props {
-    produtos: IProdutos, 
+    produtos: IProduto[], 
     selecionarProduto: React.Dispatch<React.SetStateAction<IProduto>>
 }
 
