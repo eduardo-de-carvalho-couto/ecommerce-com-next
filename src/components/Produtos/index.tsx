@@ -24,9 +24,9 @@ export default function Produtos({ produtos, selecionarProduto }: Props ) {
                             <img className={styles.imagemEstrelas} src="./img/stars.png" />
                         </div>
 
-                        <Button variant="contained" className={styles.botao} onClick={() => selecionarProduto(produto)}>
+                        <button className={styles.botao} onClick={() => selecionarProduto(produto)}>
                             Comprar
-                        </Button>
+                        </button>
                     </li>
                 ))}
             </ul>

@@ -8,16 +8,16 @@ export default function Contatos() {
       <div className={`${styles.appMensagem} ${styles.whatsapp}`}>
         <img src="./img/whatsapp.png" className={styles.appMensagem__imagem} />
         <p className={styles.appMensagem__mensagem}>Entre em contato conosco via Whatsapp</p>
-        <Button variant="contained" className={styles.whatsapp__botao}>
+        <button className={styles.whatsapp__botao}>
           Whatsapp
-        </Button>
+        </button>
       </div>
       <div className={`${styles.appMensagem} ${styles.telegram}`}>
         <img src="./img/telegram.png" className={styles.appMensagem__imagem} />
         <p className={styles.appMensagem__mensagem}>Entre em contanto conosco via Telegram</p>
-        <Button variant="contained" className={styles.telegram__botao}>
+        <button className={styles.telegram__botao}>
           Telegram
-        </Button>
+        </button>
       </div>
       <div className={styles.cadastroDeEmail}>
         <p className={styles.cadastroDeEmail__mensagem}>Receba as melhores ofertas via E-mail</p>

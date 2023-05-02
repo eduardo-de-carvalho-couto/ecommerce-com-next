@@ -11,7 +11,7 @@ function Navbar() {
           
           <div className={styles.hamburger}>
             <label htmlFor="menu">
-              <MenuIcon className={styles.botaoMenu} />
+              <MenuIcon className={styles.botaoMenu} style={{fontSize: "48px", cursor: "pointer"}} />
             </label>
             <input id="menu" type="checkbox" style={{display: "none"}} onClick={() => {setAbrirMenuMobile(!abrirMenuMobile)}} />
           </div>

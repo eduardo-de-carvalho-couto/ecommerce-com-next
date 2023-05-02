@@ -58,10 +58,14 @@
     margin: 8px 0;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
     max-width: 140px;
+    border: none;
+    padding: 8px 16px;
+    color: var(--cor-branco);
 }
 
 .botao:hover {
     background-color: var(--cor-escura);
+    cursor: pointer;
 }
 
 @media screen and (min-width: 1024px) {

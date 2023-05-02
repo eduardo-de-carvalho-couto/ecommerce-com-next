@@ -8,7 +8,6 @@
 }
 
 .botaoMenu {
-    font-size: 48px;
     background-color: var(--cor-principal);
     box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.4);
     padding: 8px;

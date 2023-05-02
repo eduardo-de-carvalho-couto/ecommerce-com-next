@@ -19,10 +19,14 @@
     font-size: 16px;
     width: 104px;
     font-weight: bold;
+    border: none;
+    padding: 12px;
+    color: var(--cor-branco);
 }
 
 .whatsapp__botao:hover {
     background-color: var(--cor-whatsapp-mais-escura);
+    cursor: pointer;
 }
 
 .telegram__botao {
@@ -32,10 +36,14 @@
     font-size: 16px;
     font-weight: bold;
     width: 104px;
+    border: none;
+    padding: 12px;
+    color: var(--cor-branco);
 }
 
 .telegram__botao:hover {
     background-color: var(--cor-telegram-mais-escura);
+    cursor: pointer;
 }
 
 .appMensagem {
