@@ -19,7 +19,7 @@ export const ComprarItem = ({ produto }: Props) => {
     <>
         
 
-        <p className={styles.comprarItem__tituloEPreco}>{produto.titulo} - R$ {produto.preco.toFixed(2)}</p>
+        <p className={styles.comprarItem__tituloEPreco}>{produto.title} - R$ {produto.salePrice.replace(/&nbsp;/g, ' ')}</p>
 
         <div>
           <IconButton className={styles.adicionar} onClick={() => {adicionarCarrinho(produto)}} >

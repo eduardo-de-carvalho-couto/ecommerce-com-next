@@ -15,11 +15,11 @@ export default function Produtos({ produtos, selecionarProduto }: Props ) {
             <ul className={styles.produtos}>
                 {produtos.map(produto => (
                     <li className={styles.produto} key={produto.id}>
-                        <img className={styles.imagem} src={produto.imagem} />
-                        <h3 className={styles.titulo}>{produto.titulo}</h3>
+                        <img className={styles.imagem} src={produto.image.sourceUrl} />
+                        <h3 className={styles.titulo}>{produto.title}</h3>
                         <div className={styles.info}>
-                            <p className={styles.precoAntigo}><s>R$ {produto.precoAntigo.toFixed(2)}</s></p>
-                            <p className={styles.preco}>R$ {produto.preco.toFixed(2)}</p>
+                            <p className={styles.precoAntigo}><s>{produto.regularPrice.replace(/&nbsp;/g, ' ')}</s></p>
+                            <p className={styles.preco}>{produto.salePrice.replace(/&nbsp;/g, ' ')}</p>
 
                             <img className={styles.imagemEstrelas} src="./img/stars.png" />
                         </div>

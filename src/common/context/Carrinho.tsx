@@ -42,7 +42,7 @@ export const useCarrinhoContext = () => {
         setValorTotal
     } = useContext(CarrinhoContext);
 
-    const mudarQuantidade = (id: number, adicionarOuRemover: number) => carrinho.map(item => {
+    const mudarQuantidade = (id: string, adicionarOuRemover: number) => carrinho.map(item => {
         if(item.id === id) item.quantidade += adicionarOuRemover;
         return item
     })
@@ -59,7 +59,7 @@ export const useCarrinhoContext = () => {
         return setCarrinho(novoCarrinho);
     }
 
-    function removerCarrinho(id: number) {
+    function removerCarrinho(id: string) {
         let produto: IProdutoNoCarrinho = carrinho.find(item => item.id === id);
         let novoCarrinho: IProdutoNoCarrinho[];
         if(produto.quantidade === 1) {
@@ -70,10 +70,14 @@ export const useCarrinhoContext = () => {
         return setCarrinho(novoCarrinho);
     }
 
+    function parsePreco(precoString: string) {
+        return parseFloat(precoString.replace(/[^0-9,]+/g,"").replace(",", "."));
+    }
+
     useEffect(() => {
         let {novaQuantidade, novoValor}: {novaQuantidade: number, novoValor: number} = carrinho.reduce((acumulador, produtoAtual) => ({
             novaQuantidade: acumulador.novaQuantidade + produtoAtual.quantidade, 
-            novoValor: acumulador.novoValor + (produtoAtual.preco * produtoAtual.quantidade)
+            novoValor: acumulador.novoValor + (parsePreco(produtoAtual.salePrice) * produtoAtual.quantidade)
         }), {novaQuantidade: 0, novoValor: 0});
         setQuantidadeCarrinho(novaQuantidade);
         setValorTotal(novoValor);

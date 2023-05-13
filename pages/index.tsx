@@ -9,34 +9,52 @@ import Informacoes from "../src/components/Informacoes"
 import Footer from "../src/components/Footer"
 import Comprar from "../src/components/Comprar"
 import { InferGetStaticPropsType, GetStaticProps } from 'next'
-import { cmsService } from "../src/infra/cms/cmsService"
+import { gql } from "@apollo/client"
+import { client } from "../src/services/apolloClient/apolloClient"
 
 export const getStaticProps: GetStaticProps = async () => {
-  
-  const contentQuery = `
-  query {
-    allProdutos {
-      id, 
-      imagem, 
-      precoAntigo, 
-      preco, 
-      maisPedidos,
-      titulo, 
-      categoria {
-        id, 
-        label
+
+const { data } = await client.query({
+  query: gql`
+    query GetAllProductsAndCategories {
+      products {
+        nodes {
+          id
+          name
+          title
+          ... on SimpleProduct {
+            regularPrice
+            salePrice
+          }
+          ... on VariableProduct {
+            regularPrice
+            salePrice
+          }
+          image {
+            sourceUrl
+          } 
+          productCategories {
+            nodes {
+              id
+              name
+            }
+          }
+        }
+      }, 
+      productCategories {
+        nodes {
+          id 
+          menuOrder
+          name
+          image {
+            sourceUrl
+          }
+        }
       }
-    }, 
-    allProductCategories {
-      id, 
-      label, 
-      imagem
     }
-  }
-  `;
-  const { data } = await cmsService({
-    query: contentQuery
-  });
+  `,
+  fetchPolicy: 'no-cache',
+});
 
   return {
     props: {
@@ -47,11 +65,14 @@ export const getStaticProps: GetStaticProps = async () => {
 
 function HomePage({ todosOsProdutos }: InferGetStaticPropsType<typeof getStaticProps>) {
 
-  const [produtos, setProdutos] = useState<IProduto[]>(todosOsProdutos.allProdutos);
+  const [produtos, setProdutos] = useState<IProduto[]>(todosOsProdutos.products.nodes);
   const [produtoSelecionado, setProdutoSelecionado] = useState<IProduto | null>();
 
   function filtrarProdutos(id: string) {
-    const produtosFiltrados = todosOsProdutos.allProdutos.filter(produto => produto.categoria.id === id)
+    const produtosFiltrados = todosOsProdutos.products.nodes.filter(produto => {
+      return produto.productCategories.nodes.some(categoria => categoria.id === id)
+    });
+
     setProdutos(produtosFiltrados);
   }
 
@@ -60,7 +81,7 @@ function HomePage({ todosOsProdutos }: InferGetStaticPropsType<typeof getStaticP
         <Navbar />
 
         <Banner />
-        <Filtro todosOsProdutos={todosOsProdutos.allProdutos} filtros={todosOsProdutos.allProductCategories} filtrarProdutos={filtrarProdutos} setProdutos={setProdutos} />
+        <Filtro todosOsProdutos={todosOsProdutos.products.nodes} filtros={todosOsProdutos.productCategories.nodes} filtrarProdutos={filtrarProdutos} setProdutos={setProdutos} />
         <div className="container__desktop">
           <Produtos produtos={produtos} selecionarProduto={setProdutoSelecionado} />
           <Contatos />

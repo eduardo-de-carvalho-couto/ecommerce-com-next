@@ -1,13 +1,14 @@
 export interface IProduto {
     id: string, 
-    titulo: string, 
-    imagem: string, 
-    precoAntigo: number, 
-    preco: number, 
+    title: string, 
+    image: {sourceUrl: string}, 
+    regularPrice: string, 
+    salePrice: any, 
     maisPedidos: boolean, 
     categoria: {
         id: string, 
-        label: string
+        label: string, 
+        image: {sourceUrl: string} | null
     }
 }
 
