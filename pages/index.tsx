@@ -11,6 +11,7 @@ import Comprar from "../src/components/Comprar"
 import { InferGetStaticPropsType, GetStaticProps } from 'next'
 import { gql } from "@apollo/client"
 import { client } from "../src/services/apolloClient/apolloClient"
+import Head from "next/head"
 
 export const getStaticProps: GetStaticProps = async () => {
 
@@ -78,6 +79,10 @@ function HomePage({ todosOsProdutos }: InferGetStaticPropsType<typeof getStaticP
 
     return (
       <>
+        <Head>
+          <title>Ecommerce</title>
+        </Head>
+
         <Navbar />
 
         <Banner />

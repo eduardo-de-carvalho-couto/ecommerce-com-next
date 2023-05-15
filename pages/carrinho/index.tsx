@@ -5,12 +5,16 @@ import { ComprarItem } from '../../src/components/Comprar/ComprarItem';
 import Button from '@mui/material/Button';
 import { useCarrinhoContext } from '../../src/common/context/Carrinho';
 import Link from 'next/link';
+import Head from 'next/head';
 
 export default function carrinho() {
   const { carrinho, valorTotal } = useCarrinhoContext();
   
   return (
     <div>
+        <Head>
+          <title>Seu Carrinho</title>
+        </Head>
         <div className={styles.cabecalho}>
             <h2 className={styles.cabecalho__titulo}>Carrinho</h2>
 
